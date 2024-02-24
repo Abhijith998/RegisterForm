@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .border{
+        margin: 50px;
+        padding: 100px;
+    }
+    .dot{
+        height: 20px;
+        width: 200px;
+    }
+    .sub{
+        padding: 7px;
+        width: 100px;
+    }
+</style>
+<body>
+    <form action="{% url 'email' %}" method="post">
+        {% csrf_token %}
+    <div class="border">
+        <h2>Forgot Password?</h2>
+        <label for="">Enter your Email</label><br>
+        <input type="email" class="dot" name="email"><br><br>
+        <input type="submit" class="sub" >
+    </form>
+    </div>
+</body>
+</html>

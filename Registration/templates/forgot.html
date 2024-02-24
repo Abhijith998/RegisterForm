@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+      #ok{
+          padding: 5px;
+          width: 100px;
+      }
+      .forms{
+        padding: 60px;
+        background-color: lightgoldenrodyellow;
+        width: 500px;
+        margin-left: 200px;
+        border: 1px solid rgb(226, 167, 167);
+        box-shadow: 5px 5px 5px rgb(119, 119, 99);
+       
+       
+
+      }
+      .design{
+        height: 25px;
+        width: 230px;
+        border: 1px solid red;
+        outline: none;
+      }
+    </style>
+
+  
+  
+  <form action="{% url 'forgot' %}" method="post">
+    {% csrf_token %}
+    <div class="forms">
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <h2>Change Password</h2>
+    <input hidden type="text" class="design" value="{{ user.username }}" name="username">
+    <label for="">Current Password</label><br>
+    <input type="password" class="design" name="current_password"><br><br>
+    <label for="">New password</label><br>
+    <input type="password"  class="design" name="new_password"><br><br>
+    <label for="">Confirm new password</label><br>
+    <input type="password" class="design" name="confirm_password"><br><br>
+    <input  id="ok" type="submit">
+  </div>
+  </form>
+  {% endblock %}

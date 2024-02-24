@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'departments' %}" method="post">
+        {% csrf_token %}
+        <h2>Department</h2>
+        <label for="">Departments</label><br>
+        <input type="text" name="department"><br><br>
+        <input type="submit">
+    </form>
+       
+</body>
+</html>

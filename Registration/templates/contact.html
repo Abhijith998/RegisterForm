@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+      body{
+        background-color: rgb(241, 234, 234);
+        
+      }
+      .outside{
+        background-color: aqua;
+      
+      }
+      .box{
+        height: 600px;
+       padding: 40px;
+       height: 550px;
+       border-radius: 5px;
+      
+       
+       
+      
+      }
+      .line{
+        outline: none;
+        border: none;
+        border: solid 2px lightgrey;
+        width: 260px;
+        
+      }
+    
+      .left{
+        float: right;
+        /* margin-right: 350px; */
+        background-color: rgb(107, 96, 207);
+        padding: 20px;
+        width: 280px;
+        border-radius: 5px;
+        color: white;
+        height: 500px; 
+      
+        
+      }
+      
+        .width{
+          background-color: white;
+          width: 700px;
+          margin-left: 300px;
+          margin-top: 30px;
+          box-shadow: 2px 2px 10px black;
+        }
+          
+      
+      
+      .noborder{
+        border: none;
+        outline: none;
+        background-color:  rgb(107, 96, 207);;
+        color: white;
+        
+      }
+      .right{
+          margin-left: 50px;
+        }
+      .round{
+        display: block;
+        background-color:  rgb(93, 94, 88);
+       padding: 5px;
+       width: 35px;
+       border-radius: 50%;
+       text-align: center;
+      }
+    </style>
+</head>
+
+      
+<div class="width">
+  <div class="box">
+    <div class="left">
+      <form action="">
+      <h2>Contact As</h2>
+      <p><div class="round"><i class="fa fa-location-arrow"></i></div>Address:  Wayanad po Thalapuzha Manathavady 670644 </p>
+      <p><div class="round" ><i class="fa fa-user"></i></div>Phone: 9738785361</p>
+      <p><div class="round"><i class="fa fa-envelope"></i></div>Email: josepf555@gmail.com</p>
+      <p><div class="round"><i class="fa fa-earth-americas"></i></div>website: www.yourcss.com</p>
+    </form>
+ 
+    </div>
+    
+    <div class="right">
+      
+      <h2>Get in Touch</h2>
+      <input type="text" placeholder="Fullname" class="line" required><br><br>
+      <input type="email" placeholder="Email"  class="line" required><br><br>
+      <input type="text" placeholder="Subject"  class="line" required><br><br>
+      <textarea name="" id="" cols="30" rows="5"  class="line" placeholder="Message" required></textarea><br>
+      <a href=""><input type="submit" value="Send Message"></a>
+    
+  </div>
+
+  </div> 
+</div>
+
+<iframe   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15716.47441453114!2d76.30582150000001!3d10.00706095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080da3437baf77%3A0xe8a59547c9c757a0!2sProtec%20Hub%2C%20Machine%20Learning%2C%20Artificial%20Intelligence%2C%20Python%2C%20PHP%2C%20React%20Native%2C%20Digital%20Marketing%20Training%20in%20Kochi!5e0!3m2!1sen!2sin!4v1708072598114!5m2!1sen!2sin" width="400" height="400" style="border:0; margin: 50px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+
+{%  endblock %}
+
+
+
+
+
+

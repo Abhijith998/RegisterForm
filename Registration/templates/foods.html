@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+</style>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        
+    <select name="depart" id="dept" class="form-control"  style="width: 25%; display: inline-flex; margin-top: 30px;">
+        <option value="">Departments</option>
+        {% for i in d %}
+        <option value="{{i.id}}">{{i.department}}</option>
+        {% endfor %}
+    </select>
+    
+    <select name="foods" id="food" class="form-control"  style="width: 25%; display: inline-flex; margin-top: 30px;" >
+       
+        <option value="">Select food</option>
+        {% for t in f %}
+        <option value="{{t.id}}" data-department="{{t.dept.id}}">{{t.fooditem}}</option>
+        {%  endfor %}
+        
+        
+    </select>
+    <script>
+        // Add this script to your template
+        $(document).ready(function () {
+            $('#food option').hide();
+            $('#dept').change(function () {
+             
+                var selectedDepartmentId = $(this).val();
+    
+                // Hide all doctors
+                $('#food option').hide();
+                
+                // Show doctors related to the selected department
+                $('#food option[data-department="' + selectedDepartmentId + '"]').show();
+                
+               
+            });
+        });
+    </script>
+    
+</form>
+
+</body>
+</html>

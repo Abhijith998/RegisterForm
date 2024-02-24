@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+     
+    <style>
+        .container{
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            width: 300px;
+            float: left;
+            border-radius: 20px;
+            background-color: white   
+        }
+        body{
+            background-color: lightgray;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #noborder{
+            height: 30px;
+            width: 200px;
+            border: none;
+            outline: none;
+        }
+        #box{
+            width: 100px;
+            border: none;
+            border-radius: 10px;
+            height: 30px;
+            color: black;
+            cursor: pointer;
+            background: linear-gradient(45deg,  #ee7724,#d8363a,#dd3675,#b44593 ); 
+        }
+        #reg{
+            height: 25px;
+            width: 70px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img{
+            width: 200px;
+                
+        }
+        small{
+            padding: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="{% url 'login_user' %}" id="small" method="post">
+            {% csrf_token %}
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+            <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" alt="">
+           <h1>Login Form</h1>
+           <input type="text" id="noborder" placeholder="Username or Email id" name="user" required><br><br>
+           <input type="password" id="noborder" placeholder="password" required name="password"><br><br>
+           <div>
+           <input type="submit" id="box"  value="Login"   ><br>
+          
+          
+           <a href="{% url 'email' %}" style="text-decoration: none; color: black;" >Forgot Password?</a>
+          
+           <h5>Don't have an account</h5> 
+          
+        </form>
+        </div>
+       
+    
+            <a href="{% url 'reg' %}"><input type="submit" id="reg"  value="Register"></a>
+    
+    <script>
+       
+    
+    </script>
+
+
+
+</body>
+</html>

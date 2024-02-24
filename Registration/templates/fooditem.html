@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="{% url 'fooditem' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Fooditems</h2>
+        <div class="form-group">
+    <label for="">Fooditems</label><br>
+    <input type="text" class="form-control" name="fooditem" style="width: 25%;"><br><br>
+    <label for="">Choose Image</label>
+    <input type="file" name="image" class="form-control" style="width: 25%;" ><br><br>
+    <select name="dept" class="form-control" style="width: 25%;">
+        <option>Select Items</option>
+        {% for i in d %}
+        <option value="{{i.id}}" >{{i.department}}</option>
+        {% endfor %}
+    </select><br>
+    <button type="submit" class="form-control" style="width: 100px;">Submit</button>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+    
+</style>
+
+<body>
+        <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+rel="stylesheet"
+/>
+{% if user.is_authenticated %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<!-- Container wrapper -->
+<div class="container">
+  <!-- Navbar brand -->
+  <a class="navbar-brand me-2" href="https://mdbgo.com/">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+      height="16"
+      alt="MDB Logo"
+      loading="lazy"
+      style="margin-top: -1px;"
+    />
+  </a>
+
+  <!-- Toggle button -->
+  <button
+    data-mdb-collapse-init
+    class="navbar-toggler"
+    type="button"
+    data-mdb-target="#navbarButtonsExample"
+    aria-controls="navbarButtonsExample"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Collapsible wrapper -->
+  <div class="collapse navbar-collapse" id="navbarButtonsExample">
+    <!-- Left links -->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">home</a>
+      </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'gallary' %}">Gallery</a>
+          </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">contact</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'departments' %}">Department</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fooditem' %}">Fooditems</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'view_items' %}">View all Fooditems</a>
+              </li>
+            </ul>
+
+         
+        </div>
+    
+          <div class="dropdown">
+            <span>{{ user.username }}</span>
+            <div class="dropdown-content">
+            <a href="{% url 'home' %}"><p>Profile</p></a>
+            <a href="{% url 'gallary' %}"><p>Gallary</p></a>
+            <a href="{% url 'contact' %}"><p>Contacts</p></a>
+            <a href="{% url 'forgot' %}"><p>Change Password</p></a>
+            <a href="{% url 'login_user' %}"><p>Logout</p></a>
+            </div>
+          </div>
+
+    <div class="d-flex align-items-center">
+     
+      
+     
+      <a
+        data-mdb-ripple-init
+        class="btn btn-primary px-3"
+        href="https://github.com/mdbootstrap/mdb-ui-kit"
+        role="button"
+        ><i class="fa fa-user-tie"></i
+      ></a>
+    </div>
+  </div>
+  <!-- Collapsible wrapper -->
+</div>
+<!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+{% block body %}
+
+
+{% endblock %}
+
+
+
+
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js">
+</script>
+    {% endif %}
+</body>
+</html>
+</body>
+</html>
